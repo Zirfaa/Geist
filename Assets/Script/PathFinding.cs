@@ -68,7 +68,7 @@ public class PathFinding : MonoBehaviour
         if(targetType == TargetType.Grave)
         {
             yield return new WaitForSeconds(3.5f);
-            GridManager.Instance.SetObstacles();
+            //GridManager.Instance.SetObstacles();
         }
         Vector3Int start = GridManager.Instance.WorldToGrid(transform.position);
         Vector3Int targetGrid = GridManager.Instance.WorldToGrid(targetGoal.position);
