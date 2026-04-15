@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class DoorGate : MonoBehaviour
@@ -32,7 +33,7 @@ public class DoorGate : MonoBehaviour
         }else if(doorType == DoorType.Timer && GameManager.instance.timer >= 3f && !isGateOpen)
         {
             isGateOpen = true;
-            canInvoke();
+            StartCoroutine(canInvoke());
             time += Time.deltaTime;
             float t = time / duration;
             transform.position = Vector3.Lerp(startPos, endPos, t);
@@ -42,8 +43,9 @@ public class DoorGate : MonoBehaviour
         
     }
 
-    void canInvoke()
+    IEnumerator canInvoke()
     {
+        yield return new WaitForSeconds(3f);
         if(isGateOpen)
         {
             //Debug.Log("Gate opened!");
