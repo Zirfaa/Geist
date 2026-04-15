@@ -17,7 +17,7 @@ public class Priest : MonoBehaviour
 
     void OnEnable()
     {
-        //Debug.Log("Priest enabled, subscribing to gate opened event.");
+        Debug.Log("Priest enabled, subscribing to gate opened event.");
         DoorGate.OnGateOpened += HandleGateOpened;
     }
 

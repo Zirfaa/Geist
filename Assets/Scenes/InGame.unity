@@ -1523,6 +1523,7 @@ MonoBehaviour:
   doorType: 0
   startPos: {x: 1, y: 4, z: -7.5}
   endPos: {x: 1, y: 2, z: -7.5}
+  isGateOpen: 0
 --- !u!65 &734324985
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4817,6 +4818,7 @@ MonoBehaviour:
   doorType: 0
   startPos: {x: 1.5, y: 2.5, z: -7.5}
   endPos: {x: 1.5, y: 0.5, z: -7.5}
+  isGateOpen: 0
 --- !u!64 &2098999144
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9283,6 +9285,7 @@ MonoBehaviour:
   doorType: 1
   startPos: {x: 11, y: 2.5, z: 3.5}
   endPos: {x: 11, y: 0.5, z: 3.5}
+  isGateOpen: 0
 --- !u!1 &5720429179839822609
 GameObject:
   m_ObjectHideFlags: 0
@@ -16320,6 +16323,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5006512734922935911}
   - component: {fileID: 3166231813741454109}
+  - component: {fileID: 8296172669068115061}
   m_Layer: 0
   m_Name: Priest
   m_TagString: Untagged
@@ -16327,6 +16331,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8296172669068115061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296172669068115060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5368ab44607b548832bf3c0f187a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Priest
 --- !u!1 &8331639619719603268
 GameObject:
   m_ObjectHideFlags: 0

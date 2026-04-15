@@ -26,25 +26,27 @@ public class DoorGate : MonoBehaviour
         {
             if(buttonPressed.isPressed)
             {
-                time += Time.deltaTime;
-                float t = time / duration;
-                transform.position = Vector3.Lerp(startPos, endPos, t);
+                isGateOpen = true;
             }
         }else if(doorType == DoorType.Timer && GameManager.instance.timer >= 3f && !isGateOpen)
         {
             isGateOpen = true;
             StartCoroutine(canInvoke());
+            
+        }
+
+        if(isGateOpen)
+        {
             time += Time.deltaTime;
             float t = time / duration;
             transform.position = Vector3.Lerp(startPos, endPos, t);
         }
-
-        
         
     }
 
     IEnumerator canInvoke()
     {
+        Debug.Log("P");
         yield return new WaitForSeconds(3f);
         if(isGateOpen)
         {
