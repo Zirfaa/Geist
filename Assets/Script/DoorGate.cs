@@ -1,12 +1,17 @@
+using System;
 using UnityEngine;
 
 public class DoorGate : MonoBehaviour
 {
     public ButtonPressed buttonPressed;
+    public enum DoorType {Button, Timer};
+    public DoorType doorType;
     private float time = 0;
     private float duration = 3f;
     public Vector3 startPos;
     public Vector3 endPos;
+    public static event Action OnGateOpened;
+    public bool isGateOpen = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,8 +21,19 @@ public class DoorGate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(buttonPressed.isPressed)
+        if(buttonPressed != null && doorType == DoorType.Button && !isGateOpen)
         {
+            if(buttonPressed.isPressed)
+            {
+                isGateOpen = true;
+                time += Time.deltaTime;
+                float t = time / duration;
+                transform.position = Vector3.Lerp(startPos, endPos, t);
+            }
+        }else if(doorType == DoorType.Timer && GameManager.instance.timer >= 3f && !isGateOpen)
+        {
+            isGateOpen = true;
+            OnGateOpened?.Invoke();
             time += Time.deltaTime;
             float t = time / duration;
             transform.position = Vector3.Lerp(startPos, endPos, t);
