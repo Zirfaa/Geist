@@ -21,11 +21,10 @@ public class DoorGate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(buttonPressed != null && doorType == DoorType.Button && !isGateOpen)
+        if(buttonPressed != null && doorType == DoorType.Button)
         {
             if(buttonPressed.isPressed)
             {
-                isGateOpen = true;
                 time += Time.deltaTime;
                 float t = time / duration;
                 transform.position = Vector3.Lerp(startPos, endPos, t);
@@ -33,12 +32,24 @@ public class DoorGate : MonoBehaviour
         }else if(doorType == DoorType.Timer && GameManager.instance.timer >= 3f && !isGateOpen)
         {
             isGateOpen = true;
-            OnGateOpened?.Invoke();
+            canInvoke();
             time += Time.deltaTime;
             float t = time / duration;
             transform.position = Vector3.Lerp(startPos, endPos, t);
         }
+
         
+        
+    }
+
+    void canInvoke()
+    {
+        if(isGateOpen)
+        {
+            //Debug.Log("Gate opened!");
+            //isGateOpen = false;
+            OnGateOpened?.Invoke();
+        }
     }
 
 
