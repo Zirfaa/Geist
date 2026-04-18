@@ -52,6 +52,7 @@ public class DoorGate : MonoBehaviour
         {
             //Debug.Log("Gate opened!");
             //isGateOpen = false;
+            GridManager.Instance.SetObstacles();
             OnGateOpened?.Invoke();
         }
     }
