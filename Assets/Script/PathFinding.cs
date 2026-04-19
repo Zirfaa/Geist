@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Cinemachine;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -15,6 +17,8 @@ public class PathFinding : MonoBehaviour
     public enum TargetType {Button, Grave};
     public TargetType targetType = TargetType.Button;
     public Coroutine PathCoroutine;
+    public bool getTarget = false;
+    public static event Action OnWinGame;
     //private Queue<Vector3Int> pathFind = new Queue<Vector3Int>();
     //private List<Vector3Int> path = new List<Vector3Int>();
     Vector3Int[] directions = new Vector3Int[]
@@ -48,6 +52,7 @@ public class PathFinding : MonoBehaviour
 
     public void CallPathSearch()
     {
+        
         if(targetType == TargetType.Button)
         {
             targetGoal = buttonPos;
@@ -67,6 +72,7 @@ public class PathFinding : MonoBehaviour
     {
         if(targetType == TargetType.Grave)
         {
+            //getTarget = false;
             yield return new WaitForSeconds(3.5f);
             //GridManager.Instance.SetObstacles();
         }
@@ -97,8 +103,12 @@ public class PathFinding : MonoBehaviour
 
         if(!cameFrom.ContainsKey(targetGrid))
         {
+            getTarget = false;
             Debug.Log("Jalur tdk ada");
             yield break;
+        }else
+        {
+            getTarget = true;
         }
 
         List<Vector3Int> paths = new List<Vector3Int>();
@@ -127,6 +137,7 @@ public class PathFinding : MonoBehaviour
                 yield return null;
             }
         }
+        OnWinGame?.Invoke();
     }
 
     

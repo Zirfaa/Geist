@@ -46,8 +46,8 @@ public class DoorGate : MonoBehaviour
 
     IEnumerator canInvoke()
     {
-        Debug.Log("P");
-        yield return new WaitForSeconds(3f);
+        //Debug.Log("P");
+        yield return new WaitForSeconds(12f);
         if(isGateOpen)
         {
             //Debug.Log("Gate opened!");

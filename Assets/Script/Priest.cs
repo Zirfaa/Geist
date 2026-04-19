@@ -7,6 +7,7 @@ using UnityEngine;
 public class Priest : MonoBehaviour
 {
     public Transform Player;
+    private PathFinding pathFinding;
     private bool GateOpened = false; 
     Vector3Int[] directions = new Vector3Int[]
     {
@@ -20,7 +21,7 @@ public class Priest : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        pathFinding = Player.GetComponent<PathFinding>();
     }
 
     // Update is called once per frame
@@ -42,7 +43,7 @@ public class Priest : MonoBehaviour
 
     void HandleGateOpened()
     {
-        if (!GateOpened)
+        if (!GateOpened && !pathFinding.getTarget)
         {
             // Logic to open the gate
             Debug.Log("Gate opened!");

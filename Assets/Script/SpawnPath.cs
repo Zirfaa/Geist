@@ -8,10 +8,12 @@ public class SpawnPath : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        //Debug.Log("coba1");
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if(Physics.Raycast(ray, out hit))
         {
+            Debug.Log("coba2");
             Vector3 mousePos = hit.point;
             int x = Mathf.FloorToInt(mousePos.x);
             int z = Mathf.FloorToInt(mousePos.z);

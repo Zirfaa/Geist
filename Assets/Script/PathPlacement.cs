@@ -68,7 +68,7 @@ public class PathPlacement : MonoBehaviour
                 if(childs == transform) continue;
                 Vector3 worldPos = childs.position;
                 Vector3Int gridPos = GridManager.Instance.WorldToGrid(worldPos);
-                Debug.Log("Child world: " + worldPos + " Grid: " + gridPos);
+                //Debug.Log("Child world: " + worldPos + " Grid: " + gridPos);
 
                 //Vector3Int above = new Vector3Int(gridPos.x, gridPos.y + 1, gridPos.z);
                 if(GridManager.Instance.grid.ContainsKey(gridPos))
