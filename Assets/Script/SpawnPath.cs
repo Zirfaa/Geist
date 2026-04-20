@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class SpawnPath : MonoBehaviour, IPointerClickHandler
 {
     public GameObject PathObject;
-
+    public DestroyPathObject destroyPath;
     public void OnPointerClick(PointerEventData eventData)
     {
         //Debug.Log("coba1");
@@ -20,7 +20,7 @@ public class SpawnPath : MonoBehaviour, IPointerClickHandler
 
             Vector3 spawnPos = new Vector3(x + 0.5f, 2.5f, z + 0.5f);
             
-            Instantiate(PathObject, spawnPos, Quaternion.identity);
+            destroyPath.currentPath = Instantiate(PathObject, spawnPos, Quaternion.identity);
         }
     }
 
