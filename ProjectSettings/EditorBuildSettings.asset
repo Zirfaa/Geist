@@ -8,5 +8,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Low Poly Graveyard/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/InGame.unity
+    guid: 2ca657328b2a7b74d8f49e0ca7a18165
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: e346c7a7c6a43bb4f95e66eb38f2913a
+  - enabled: 1
+    path: Assets/Scenes/SelectLevel.unity
+    guid: 5f269954612d4704e96c680ee0720041
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
