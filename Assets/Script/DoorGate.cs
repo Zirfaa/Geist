@@ -12,6 +12,7 @@ public class DoorGate : MonoBehaviour
     public Vector3 startPos;
     public Vector3 endPos;
     public static event Action OnGateOpened;
+    public static event Action OnPlayerSearch;
     public bool isGateOpen = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,6 +28,7 @@ public class DoorGate : MonoBehaviour
             if(buttonPressed.isPressed)
             {
                 isGateOpen = true;
+                StartCoroutine(cdGate());
             }
         }else if(doorType == DoorType.Timer && GameManager.instance.timer >= 3f && !isGateOpen)
         {
@@ -42,6 +44,12 @@ public class DoorGate : MonoBehaviour
             transform.position = Vector3.Lerp(startPos, endPos, t);
         }
         
+    }
+
+    IEnumerator cdGate()
+    {
+        yield return new WaitForSeconds(duration);
+        GridManager.Instance.SetObstacles();
     }
 
     IEnumerator canInvoke()

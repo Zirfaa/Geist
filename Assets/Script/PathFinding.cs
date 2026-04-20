@@ -42,12 +42,14 @@ public class PathFinding : MonoBehaviour
     {
         PathPlacement.OnPlayerSearch += CallPathSearch;
         ButtonPressed.OnPlayerSearch += CallPathSearch;
+        DoorGate.OnPlayerSearch += CallPathSearch;
     }
 
     void OnDisable()
     {
         PathPlacement.OnPlayerSearch -= CallPathSearch;
         ButtonPressed.OnPlayerSearch -= CallPathSearch;
+        DoorGate.OnPlayerSearch -= CallPathSearch;
     }
 
     public void CallPathSearch()
