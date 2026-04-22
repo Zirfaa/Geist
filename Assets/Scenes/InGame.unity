@@ -2791,7 +2791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &974817453
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11743,15 +11743,15 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6518143695452160079}
   serializedVersion: 8
-  lengthInSec: 10
-  simulationSpeed: 7
+  lengthInSec: 100
+  simulationSpeed: 5
   stopAction: 0
   cullingMode: 1
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 0
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -11818,8 +11818,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 350
-      minScalar: 300
+      scalar: 10
+      minScalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -12374,7 +12374,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 50, y: 1, z: 1}
+    m_Scale: {x: 60, y: 1, z: 60}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -12453,7 +12453,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 6.18
+      value: 0.0001
       mode: 0
       spread: 0
       speed:
@@ -12572,7 +12572,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 1100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -16689,7 +16689,7 @@ Transform:
   m_GameObject: {fileID: 6518143695452160079}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0036713642, y: 0.7518166, z: -0.0028728927, w: 0.65935594}
-  m_LocalPosition: {x: -52.44701, y: 2.1021605, z: 17.93083}
+  m_LocalPosition: {x: -6.1641455, y: 1.6797383, z: 1.7531296}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16728,7 +16728,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6520637797495473193
 Transform:
   m_ObjectHideFlags: 0
