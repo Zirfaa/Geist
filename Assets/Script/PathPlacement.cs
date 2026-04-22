@@ -31,6 +31,12 @@ public class PathPlacement : MonoBehaviour
                 return;
             }
             isPlace = true;
+            foreach(Transform child in objectPath.GetComponentsInChildren<Transform>())
+            {
+                if(child == transform) continue;
+                child.gameObject.tag = "Obstacle";
+            }
+
             // isClick = true;
             // isDone = true;
             GridManager.Instance.SetObstacles();
@@ -38,7 +44,7 @@ public class PathPlacement : MonoBehaviour
             
         }
 
-        if(!isPlace && Input.GetKeyDown(KeyCode.R))
+        if(!isPlace && (Input.GetKeyDown(KeyCode.R) || Input.GetMouseButtonDown(1)))
         {
 
             rotationSide += 90;

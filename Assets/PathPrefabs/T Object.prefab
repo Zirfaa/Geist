@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4752006048090656355}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 5221316411955468829}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 8407164652341251882}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 2665471478898185026}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 4296237609256530811}
   m_Layer: 0
   m_Name: T Object
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -512,7 +512,7 @@ GameObject:
   - component: {fileID: 9218773374686795942}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
