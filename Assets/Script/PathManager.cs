@@ -19,11 +19,13 @@ public class PathManager : MonoBehaviour
     void OnEnable()
     {
         PathPlacement.OnPathManage += subsidePaths;
+        UIInGame.OnPathChanged += changedPathText;
     }
 
     void OnDisable()
     {
         PathPlacement.OnPathManage -= subsidePaths;
+        UIInGame.OnPathChanged -= changedPathText;
     }
 
     bool subsidePaths(int value)
@@ -34,5 +36,10 @@ public class PathManager : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    int changedPathText()
+    {
+        return maxPaths;
     }
 }

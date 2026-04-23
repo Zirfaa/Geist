@@ -1,9 +1,13 @@
+using System;
+using TMPro;
 using UnityEngine;
 
 public class UIInGame : MonoBehaviour
 {
     public GameObject GameOverPanel;
     public GameObject WinGamePanel;
+    public TextMeshProUGUI PathUnits;
+    public static event Func<int> OnPathChanged;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,7 +18,8 @@ public class UIInGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        int pathsValue = OnPathChanged?.Invoke() ?? 0;
+        PathUnits.text = "Path Units : " + pathsValue;
     }
 
     void OnEnable()
