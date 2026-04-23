@@ -3,7 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public float timer = 0f;
+    [HideInInspector] public float timer = 0f;
      void Awake()
     {
         if (instance == null)

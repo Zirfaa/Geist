@@ -12,6 +12,8 @@ public class PathPlacement : MonoBehaviour
     private bool canPlace = true;
     public static event Action OnPlayerSearch;
     private int rotationSide = 0;
+    public static Func<int, bool> OnPathManage;
+    public int pathValue;
     //public float x, y, z;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,6 +32,8 @@ public class PathPlacement : MonoBehaviour
                 Debug.Log("Tdk bisa diletakkan");
                 return;
             }
+            bool pathCraft = OnPathManage(pathValue);
+            if(!pathCraft) return; 
             isPlace = true;
             foreach(Transform child in objectPath.GetComponentsInChildren<Transform>())
             {

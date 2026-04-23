@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PathPlacement
   objectPath: {fileID: 0}
+  pathValue: 1
 --- !u!1 &5414610994552757017
 GameObject:
   m_ObjectHideFlags: 0
