@@ -12,7 +12,6 @@ public class DoorGate : MonoBehaviour
     public Vector3 startPos;
     public Vector3 endPos;
     public static event Action OnGateOpened;
-    public static event Action OnPlayerSearch;
     public bool isGateOpen = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

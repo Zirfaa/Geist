@@ -21,8 +21,21 @@ public class DestroyPathObject : MonoBehaviour, IPointerEnterHandler
     }
 
     // Update is called once per frame
-    void Update()
+    void OnDisable()
     {
-        
+        if(this.gameObject.activeInHierarchy == false)
+        {
+            currentPath = null;
+        }
     }
+
+    // void OnEnable()
+    // {
+    //     PathPlacement.OnPlacementYet += 
+    // }
+
+    // void placementdone()
+    // {
+        
+    // }
 }
