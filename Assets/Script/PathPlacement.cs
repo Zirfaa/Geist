@@ -14,7 +14,7 @@ public class PathPlacement : MonoBehaviour
     private int rotationSide = 0;
     public static Func<int, bool> OnPathManage;
     public int pathValue;
-    //public float x, y, z;
+    public static event Action<bool> OnDestroyPanelHide;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,7 +26,7 @@ public class PathPlacement : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0) && !isPlace)
         {
-            Debug.Log("Placement");
+            //Debug.Log("Placement");
             if(!canPlace)
             {
                 Debug.Log("Tdk bisa diletakkan");
@@ -34,6 +34,7 @@ public class PathPlacement : MonoBehaviour
             }
             bool pathCraft = OnPathManage(pathValue);
             if(!pathCraft) return; 
+            OnDestroyPanelHide?.Invoke(false);
             isPlace = true;
             foreach(Transform child in objectPath.GetComponentsInChildren<Transform>())
             {

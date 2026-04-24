@@ -1323,6 +1323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIInGame
   GameOverPanel: {fileID: 1752628594}
   WinGamePanel: {fileID: 1478036439}
+  DestroyPathPanel: {fileID: 2033678846}
   PathUnits: {fileID: 1142813070}
 --- !u!4 &586150594
 Transform:
