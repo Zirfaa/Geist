@@ -14,8 +14,24 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("SelectLevel");
     }
 
-    public void GoToGame()
+    public void GoToLvl1()
     {
-        SceneManager.LoadScene("InGame");
+        SceneManager.LoadScene("Lv1");
+    }
+    public void GoToLvl2()
+    {
+        SceneManager.LoadScene("Lv2");
+    }
+    public void GoToLvl3()
+    {
+        SceneManager.LoadScene("Lv3");
+    }
+    public void GoToLvl4()
+    {
+        SceneManager.LoadScene("Lv4");
+    }
+    public void GoToLvl5()
+    {
+        SceneManager.LoadScene("Lv5");
     }
 }
