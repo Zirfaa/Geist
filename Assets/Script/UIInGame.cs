@@ -9,6 +9,7 @@ public class UIInGame : MonoBehaviour
     public GameObject DestroyPathPanel;
     public TextMeshProUGUI PathUnits;
     public static event Func<int> OnPathChanged;
+    public static event Action OnSavePathRemaining;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -50,6 +51,7 @@ public class UIInGame : MonoBehaviour
     {
         Time.timeScale = 0;
         WinGamePanel.SetActive(true);
+        OnSavePathRemaining?.Invoke();
     }
 
     void RemovePathPanel(bool isActive)

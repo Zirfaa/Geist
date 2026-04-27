@@ -4516,7 +4516,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9039358a1f190418278d19c3f40789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PathManager
-  maxPaths: 5
+  maxPaths: 6
+  pathsUnit: 5
 --- !u!4 &800302040
 Transform:
   m_ObjectHideFlags: 0
