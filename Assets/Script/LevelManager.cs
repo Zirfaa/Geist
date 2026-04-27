@@ -13,20 +13,20 @@ public class LevelManager : MonoBehaviour
             RemainingPathData data = SaveManager.saveManager.remainingPathData.pathsData.Find(x => x.Level == "Lv" + (i + 1));
             if(data != null)
             {
-                int remainPath = data.maxPaths - data.PathsRemain; 
-                if(remainPath > 2)
+                //int remainPath = data.maxPaths - data.PathsRemain; 
+                if(data.PathsRemain > 2)
                 {
                     levels[i].Stars[0].SetActive(true);
                     levels[i].Stars[1].SetActive(true);
                     levels[i].Stars[2].SetActive(true);
                     levels[i].Lock.SetActive(false);
-                }else if(remainPath <= 2)
+                }else if(data.PathsRemain <= 2)
                 {
                     levels[i].Stars[0].SetActive(true);
                     levels[i].Stars[1].SetActive(true);
                     levels[i].Stars[2].SetActive(false);
                     levels[i].Lock.SetActive(false);
-                }else if(remainPath <= 1)
+                }else if(data.PathsRemain <= 1)
                 {
                     levels[i].Stars[0].SetActive(true);
                     levels[i].Stars[1].SetActive(false);

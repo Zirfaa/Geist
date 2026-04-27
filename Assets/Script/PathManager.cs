@@ -2,10 +2,19 @@ using UnityEngine;
 
 public class PathManager : MonoBehaviour
 {
+    public static PathManager pathManager;
     public int maxPaths;
     [HideInInspector] public int pathsUnit;
+    public bool SpawnPath = true;
     //public PathPlacement pathobject;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake()
+    {
+        if(pathManager == null)
+        {
+            pathManager = this;
+        }
+    }
     void Start()
     {
         pathsUnit = maxPaths;

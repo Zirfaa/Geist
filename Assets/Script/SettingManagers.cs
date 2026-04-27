@@ -1,9 +1,9 @@
+using System;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class SettingManagers : MonoBehaviour
 {
     public GameObject settingPanel;
-
     public void OpenSetting()
     {
         

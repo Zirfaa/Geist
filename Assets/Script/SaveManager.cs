@@ -85,5 +85,14 @@ public class SaveManager : MonoBehaviour
         }
     }
 
+    public void RemoveData()
+    {
+        if(File.Exists(savePath))
+        {
+            File.Delete(savePath);
+            remainingPathData.pathsData.Clear();
+        }
+    }
+
 
 }

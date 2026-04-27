@@ -9,6 +9,8 @@ public class DestroyPathObject : MonoBehaviour, IPointerEnterHandler
         if(currentPath != null)
         {
             Debug.Log("Destroyeedd");
+            PathPlacement pathPlacement = currentPath.GetComponent<PathPlacement>();
+            PathManager.pathManager.pathsUnit += pathPlacement.pathValue;
             Destroy(currentPath);
             currentPath = null;
         }

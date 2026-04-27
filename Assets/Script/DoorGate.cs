@@ -29,7 +29,7 @@ public class DoorGate : MonoBehaviour
                 isGateOpen = true;
                 StartCoroutine(cdGate());
             }
-        }else if(doorType == DoorType.Timer && GameManager.instance.timer >= 3f && !isGateOpen)
+        }else if(doorType == DoorType.Timer && GameManager.instance.timer >= 26 && !isGateOpen)
         {
             isGateOpen = true;
             StartCoroutine(canInvoke());
@@ -47,14 +47,14 @@ public class DoorGate : MonoBehaviour
 
     IEnumerator cdGate()
     {
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(duration + 1f);
         GridManager.Instance.SetObstacles();
     }
 
     IEnumerator canInvoke()
     {
         //Debug.Log("P");
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(3f);
         if(isGateOpen)
         {
             //Debug.Log("Gate opened!");

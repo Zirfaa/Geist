@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,6 +24,12 @@ public class SceneLoader : MonoBehaviour
     public void GoToSelectLevel()
     {
         Debug.Log("Tombol Play ditekan");
+        LoadScene("SelectLevel");
+    }
+
+    public void GoToNewGame()
+    {
+        SaveManager.saveManager.RemoveData();
         LoadScene("SelectLevel");
     }
 
