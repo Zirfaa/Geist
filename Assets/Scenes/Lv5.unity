@@ -3316,6 +3316,8 @@ MonoBehaviour:
   WinGamePanel: {fileID: 1667507814}
   DestroyPathPanel: {fileID: 1310860471}
   PathUnits: {fileID: 608600284}
+  GameWin: {fileID: 8300000, guid: 457bfc16f58555246a7b9b3d53431b1c, type: 3}
+  GameLose: {fileID: 8300000, guid: fc0119828b57fa74db3b9110fbda9006, type: 3}
 --- !u!4 &563233961
 Transform:
   m_ObjectHideFlags: 0
@@ -4518,6 +4520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PathManager
   maxPaths: 6
   pathsUnit: 5
+  SpawnPath: 1
 --- !u!4 &800302040
 Transform:
   m_ObjectHideFlags: 0
@@ -9730,6 +9733,7 @@ MonoBehaviour:
   startPos: {x: 12, y: 2.5, z: -9}
   endPos: {x: 12, y: 0.5, z: -9}
   isGateOpen: 0
+  GateOpen: {fileID: 0}
 --- !u!64 &840322031
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15698,6 +15702,7 @@ MonoBehaviour:
   startPos: {x: 11, y: 2.5, z: 3.5}
   endPos: {x: 11, y: 0.5, z: 3.5}
   isGateOpen: 0
+  GateOpen: {fileID: 8300000, guid: 41d4ebe8fc3ead74a93e3589f3a85a0c, type: 3}
 --- !u!64 &1717901126
 MeshCollider:
   m_ObjectHideFlags: 0

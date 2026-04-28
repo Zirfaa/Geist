@@ -13,6 +13,7 @@ public class DoorGate : MonoBehaviour
     public Vector3 endPos;
     public static event Action OnGateOpened;
     public bool isGateOpen = false;
+    public AudioClip GateOpen;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,6 +48,7 @@ public class DoorGate : MonoBehaviour
 
     IEnumerator cdGate()
     {
+        AudioManager.audioManager.PlaySFX(GateOpen);
         yield return new WaitForSeconds(duration + 1f);
         GridManager.Instance.SetObstacles();
     }
@@ -54,6 +56,7 @@ public class DoorGate : MonoBehaviour
     IEnumerator canInvoke()
     {
         //Debug.Log("P");
+        AudioManager.audioManager.PlaySFX(GateOpen);
         yield return new WaitForSeconds(3f);
         if(isGateOpen)
         {
