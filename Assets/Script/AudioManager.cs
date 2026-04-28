@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -67,5 +68,7 @@ public class AudioManager : MonoBehaviour
         audioMixer.SetFloat("VolMaster", ToMixerVolume(master));
         audioMixer.SetFloat("VolMusic", ToMixerVolume(music));
         audioMixer.SetFloat("VolSFX", ToMixerVolume(sfx));
+
+
     }
 }
