@@ -19,6 +19,7 @@ public class PathFinding : MonoBehaviour
     public Coroutine PathCoroutine;
     public bool getTarget = false;
     public static event Action OnWinGame;
+    private Animator animator;
     //private Queue<Vector3Int> pathFind = new Queue<Vector3Int>();
     //private List<Vector3Int> path = new List<Vector3Int>();
     Vector3Int[] directions = new Vector3Int[]
@@ -31,6 +32,7 @@ public class PathFinding : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         //StartCoroutine(PathSearch());
     }
     void Update()
@@ -78,6 +80,7 @@ public class PathFinding : MonoBehaviour
             yield return new WaitForSeconds(3.5f);
             //GridManager.Instance.SetObstacles();
         }
+        animator.SetBool("IsWalk", true);
         Vector3Int start = GridManager.Instance.WorldToGrid(transform.position);
         Vector3Int targetGrid = GridManager.Instance.WorldToGrid(targetGoal.position);
 
@@ -139,6 +142,7 @@ public class PathFinding : MonoBehaviour
                 yield return null;
             }
         }
+        animator.SetBool("IsWalk", false);
         OnWinGame?.Invoke();
     }
 
