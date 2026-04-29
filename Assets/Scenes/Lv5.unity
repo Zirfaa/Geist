@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -10943,41 +10943,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: SettingPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 1569723189474800659, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 454636520693066428, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1569723189474800659, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569723189474800659, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2444570377817572130, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 2444570377817572130, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2760234124598837163, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 2760234124598837163, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2760234124598837163, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 2983735000811048670, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 2983735000811048670, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3263428551842190673, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
       propertyPath: m_Pivot.x
@@ -11061,27 +11065,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4613338677158588926, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 4613338677158588926, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4613338677158588926, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 6893141911632313915, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 6893141911632313915, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6893141911632313915, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 8802914357964250689, guid: 879aa4e621aaf414bbe05c6e8a468e25, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
