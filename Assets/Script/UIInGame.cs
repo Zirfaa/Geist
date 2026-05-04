@@ -54,6 +54,7 @@ public class UIInGame : MonoBehaviour
 
     void GameOver()
     {
+        GameManager.instance.timer = 0;
         AudioManager.audioManager.PlaySFX(GameLose);
         Time.timeScale = 0;
         GameOverPanel.SetActive(true);
@@ -61,6 +62,7 @@ public class UIInGame : MonoBehaviour
 
     void WinGame()
     {
+        GameManager.instance.timer = 0;
         AudioManager.audioManager.PlaySFX(GameWin);
         Time.timeScale = 0;
         WinGamePanel.SetActive(true);
