@@ -5,7 +5,7 @@ public class PathManager : MonoBehaviour
     public static PathManager pathManager;
     public int maxPaths;
     [HideInInspector] public int pathsUnit;
-    public bool SpawnPath = true;
+    public bool canSpawnPath = true;
     //public PathPlacement pathobject;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -28,14 +28,14 @@ public class PathManager : MonoBehaviour
 
     void OnEnable()
     {
-        PathPlacement.OnPathManage += subsidePaths;
+        SpawnPath.OnPathManage += subsidePaths;
         UIInGame.OnPathChanged += changedPathText;
         UIInGame.OnSavePathRemaining += SaveData;
     }
 
     void OnDisable()
     {
-        PathPlacement.OnPathManage -= subsidePaths;
+        SpawnPath.OnPathManage -= subsidePaths;
         UIInGame.OnPathChanged -= changedPathText;
         UIInGame.OnSavePathRemaining -= SaveData;
     }

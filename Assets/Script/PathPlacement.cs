@@ -23,7 +23,7 @@ public class PathPlacement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && !isPlace && !PathManager.pathManager.SpawnPath)
+        if(Input.GetMouseButtonDown(0) && !isPlace && !PathManager.pathManager.canSpawnPath)
         {
             //Debug.Log("Placement");
             if(!canPlace)
@@ -34,7 +34,7 @@ public class PathPlacement : MonoBehaviour
             
             OnDestroyPanelHide?.Invoke(false);
             isPlace = true;
-            PathManager.pathManager.SpawnPath = true;
+            PathManager.pathManager.canSpawnPath = true;
             foreach(Transform child in objectPath.GetComponentsInChildren<Transform>())
             {
                 if(child == transform) continue;

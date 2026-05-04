@@ -13,7 +13,7 @@ public class SpawnPath : MonoBehaviour, IPointerClickHandler
     public static Func<int, bool> OnPathManage;
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(!PathManager.pathManager.SpawnPath) return;
+        if(!PathManager.pathManager.canSpawnPath) return;
         //Debug.Log("coba1");
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -28,7 +28,7 @@ public class SpawnPath : MonoBehaviour, IPointerClickHandler
             
             destroyPath.currentPath = Instantiate(PathObject, spawnPos, Quaternion.identity);
             OnDestroyPanelShow?.Invoke(true);
-            PathManager.pathManager.SpawnPath = false;
+            PathManager.pathManager.canSpawnPath = false;
             bool pathCraft = OnPathManage(pathsValue);
             if(!pathCraft) return; 
         }
