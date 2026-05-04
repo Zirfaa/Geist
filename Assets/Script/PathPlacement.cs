@@ -12,7 +12,6 @@ public class PathPlacement : MonoBehaviour
     private bool canPlace = true;
     public static event Action OnPlayerSearch;
     private int rotationSide = 0;
-    public static Func<int, bool> OnPathManage;
     public int pathValue;
     public static event Action<bool> OnDestroyPanelHide;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,8 +31,7 @@ public class PathPlacement : MonoBehaviour
                 Debug.Log("Tdk bisa diletakkan");
                 return;
             }
-            bool pathCraft = OnPathManage(pathValue);
-            if(!pathCraft) return; 
+            
             OnDestroyPanelHide?.Invoke(false);
             isPlace = true;
             PathManager.pathManager.SpawnPath = true;

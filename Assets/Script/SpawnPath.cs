@@ -6,8 +6,11 @@ using UnityEngine.InputSystem;
 public class SpawnPath : MonoBehaviour, IPointerClickHandler
 {
     public GameObject PathObject;
+    private PathPlacement pathPlacement;
+    private int pathsValue;
     public DestroyPathObject destroyPath;
     public static event Action<bool> OnDestroyPanelShow;
+    public static Func<int, bool> OnPathManage;
     public void OnPointerClick(PointerEventData eventData)
     {
         if(!PathManager.pathManager.SpawnPath) return;
@@ -26,13 +29,16 @@ public class SpawnPath : MonoBehaviour, IPointerClickHandler
             destroyPath.currentPath = Instantiate(PathObject, spawnPos, Quaternion.identity);
             OnDestroyPanelShow?.Invoke(true);
             PathManager.pathManager.SpawnPath = false;
+            bool pathCraft = OnPathManage(pathsValue);
+            if(!pathCraft) return; 
         }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        
+        pathPlacement = GetComponent<PathPlacement>();
+        pathsValue = pathPlacement.pathValue;
     }
 
     // Update is called once per frame
