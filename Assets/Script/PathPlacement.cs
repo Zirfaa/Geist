@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -58,12 +59,24 @@ public class PathPlacement : MonoBehaviour
         if(!isPlace)
         {
             canPlace = true;
+            Plane plane = new Plane(Vector3.up, Vector3.zero);
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+            //RaycastHit hit;
+            float distance;
 
-            if (Physics.Raycast(ray, out hit))
+            // if (Physics.Raycast(ray, out hit))
+            // {
+            //     Vector3 pos = hit.point;
+
+            //     int x = Mathf.FloorToInt(pos.x);
+            //     int z = Mathf.FloorToInt(pos.z);
+
+            //     transform.position = new Vector3(x + 0.5f, 2.5f, z + 0.5f);
+            // }
+
+            if(plane.Raycast(ray, out distance))
             {
-                Vector3 pos = hit.point;
+                Vector3 pos = ray.GetPoint(distance);
 
                 int x = Mathf.FloorToInt(pos.x);
                 int z = Mathf.FloorToInt(pos.z);
