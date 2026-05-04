@@ -29,7 +29,7 @@ public class SpawnPath : MonoBehaviour, IPointerClickHandler
             destroyPath.currentPath = Instantiate(PathObject, spawnPos, Quaternion.identity);
             OnDestroyPanelShow?.Invoke(true);
             PathManager.pathManager.canSpawnPath = false;
-            bool pathCraft = OnPathManage(pathsValue);
+            bool pathCraft = OnPathManage?.Invoke(pathsValue) ?? false;
             if(!pathCraft) return; 
         }
     }
@@ -37,7 +37,7 @@ public class SpawnPath : MonoBehaviour, IPointerClickHandler
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
-        pathPlacement = GetComponent<PathPlacement>();
+        pathPlacement = PathObject.GetComponent<PathPlacement>();
         pathsValue = pathPlacement.pathValue;
     }
 
