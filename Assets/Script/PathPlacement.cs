@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PathPlacement : MonoBehaviour
 {
-    public GameObject objectPath;
+    [HideInInspector] public GameObject objectPath;
     // private bool isClick = false;
     // private bool isDone = false;
     private bool isPlace = false;
@@ -15,6 +15,8 @@ public class PathPlacement : MonoBehaviour
     private int rotationSide = 0;
     public int pathValue;
     public static event Action<bool> OnDestroyPanelHide;
+    public AudioClip RotatePathSound;
+    public AudioClip PlacementPathSound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,6 +37,7 @@ public class PathPlacement : MonoBehaviour
             
             OnDestroyPanelHide?.Invoke(false);
             isPlace = true;
+            AudioManager.audioManager.PlaySFX(PlacementPathSound);
             PathManager.pathManager.canSpawnPath = true;
             foreach(Transform child in objectPath.GetComponentsInChildren<Transform>())
             {
@@ -51,7 +54,7 @@ public class PathPlacement : MonoBehaviour
 
         if(!isPlace && (Input.GetKeyDown(KeyCode.R) || Input.GetMouseButtonDown(1)))
         {
-
+            AudioManager.audioManager.PlaySFX(RotatePathSound);
             rotationSide += 90;
             transform.rotation = Quaternion.Euler(0, rotationSide, 0);
         }

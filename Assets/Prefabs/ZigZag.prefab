@@ -50,6 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PathPlacement
   objectPath: {fileID: 0}
   pathValue: 3
+  RotatePathSound: {fileID: 8300000, guid: cca965aad83754047a6434bc08fa3452, type: 3}
+  PlacementPathSound: {fileID: 8300000, guid: b91264cf7858221439e2051277f686c5, type: 3}
 --- !u!1 &2506063551601080229
 GameObject:
   m_ObjectHideFlags: 0
