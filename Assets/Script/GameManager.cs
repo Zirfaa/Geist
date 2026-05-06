@@ -39,6 +39,6 @@ public class GameManager : MonoBehaviour
 
     int TimerChange()
     {
-        return 30 - (int)timer;
+        return Mathf.CeilToInt(30 - timer);
     }
 }

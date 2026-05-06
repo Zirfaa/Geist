@@ -36,15 +36,18 @@ public class UIInGame : MonoBehaviour
     {
         int pathsValue = OnPathChanged?.Invoke() ?? 0;
         int timerChange = OnTimerChange?.Invoke() ?? 0;
-        PathUnits.text = "Path Units : " + pathsValue;
-        TimerLeft.text = timerChange.ToString();
-        if(timerChange <= 5)
+        if(timerChange < 1)
+        {
+            timerChange = 0;
+        }else if(timerChange <= 5)
         {
             TimerLeft.color = Color.red;
-        }else
+        }else if(timerChange > 5)
         {
             TimerLeft.color = Color.green;
         }
+        PathUnits.text = "Path Units : " + pathsValue;
+        TimerLeft.text = timerChange.ToString();
     }
 
     void OnEnable()

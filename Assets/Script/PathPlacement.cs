@@ -97,17 +97,35 @@ public class PathPlacement : MonoBehaviour
                 //Debug.Log("Child world: " + worldPos + " Grid: " + gridPos);
 
                 //Vector3Int above = new Vector3Int(gridPos.x, gridPos.y + 1, gridPos.z);
+                
                 if(GridManager.Instance.grid.ContainsKey(gridPos))
                 {
                     if(GridManager.Instance.grid[gridPos] == GridManager.GridType.Obstacle)
                     {
+                        
                         canPlace = false;
                         break;
                     }
                 }
 
+                if(!GridManager.Instance.grid.ContainsKey(gridPos))
+                {
+                    canPlace = false;
+                    break;
+                }
             }
 
+            foreach(Transform childs in child)
+            {
+                if(childs == transform) continue;
+
+                MeshRenderer mr = childs.GetComponentInChildren<MeshRenderer>();
+                if(mr != null)
+                {
+                    Material mats = mr.material;
+                    mats.SetColor("_OutlineColor", canPlace ? Color.green : Color.red);
+                }
+            }
 
         }
     }

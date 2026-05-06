@@ -30,7 +30,7 @@ public class DoorGate : MonoBehaviour
                 isGateOpen = true;
                 StartCoroutine(cdGate());
             }
-        }else if(doorType == DoorType.Timer && GameManager.instance.timer >= 26 && !isGateOpen)
+        }else if(doorType == DoorType.Timer && GameManager.instance.timer >= 27 && !isGateOpen)
         {
             isGateOpen = true;
             StartCoroutine(canInvoke());
@@ -49,7 +49,7 @@ public class DoorGate : MonoBehaviour
     IEnumerator cdGate()
     {
         AudioManager.audioManager.PlaySFX(GateOpen);
-        yield return new WaitForSeconds(duration + 1f);
+        yield return new WaitForSeconds(duration);
         GridManager.Instance.SetObstacles();
     }
 
