@@ -13,7 +13,7 @@ public class SceneLoader : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        //GameManager.instance.timer = 0f;
+        GameManager.instance.timer = 0f;
         LoadScene("MainMenu");
     }
     public void ReloadCurrentScene()
@@ -25,7 +25,7 @@ public class SceneLoader : MonoBehaviour
 
     public void GoToSelectLevel()
     {
-        GameManager.instance.timer = 0f;
+        //GameManager.instance.timer = 0f;
         Debug.Log("Tombol Play ditekan");
         LoadScene("SelectLevel");
     }
