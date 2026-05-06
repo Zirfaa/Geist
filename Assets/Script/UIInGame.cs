@@ -9,8 +9,10 @@ public class UIInGame : MonoBehaviour
     public GameObject WinGamePanel;
     public GameObject DestroyPathPanel;
     public TextMeshProUGUI PathUnits;
+    public TextMeshProUGUI TimerLeft;
     public static event Func<int> OnPathChanged;
     public static event Action OnSavePathRemaining;
+    public static event Func<int> OnTimerChange;
     public AudioClip GameWin;
     public AudioClip GameLose;
     public Slider MasterVolSlider;
@@ -33,7 +35,16 @@ public class UIInGame : MonoBehaviour
     void Update()
     {
         int pathsValue = OnPathChanged?.Invoke() ?? 0;
+        int timerChange = OnTimerChange?.Invoke() ?? 0;
         PathUnits.text = "Path Units : " + pathsValue;
+        TimerLeft.text = timerChange.ToString();
+        if(timerChange <= 5)
+        {
+            TimerLeft.color = Color.red;
+        }else
+        {
+            TimerLeft.color = Color.green;
+        }
     }
 
     void OnEnable()

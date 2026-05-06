@@ -16,6 +16,15 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void OnEnable()
+    {
+        UIInGame.OnTimerChange += TimerChange;
+    }
+
+    void OnDisable()
+    {
+        UIInGame.OnTimerChange -= TimerChange;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,5 +35,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+    }
+
+    int TimerChange()
+    {
+        return 30 - (int)timer;
     }
 }
