@@ -39,14 +39,23 @@ public class PathPlacement : MonoBehaviour
             isPlace = true;
             AudioManager.audioManager.PlaySFX(PlacementPathSound);
             PathManager.pathManager.canSpawnPath = true;
-            foreach(Transform child in objectPath.GetComponentsInChildren<Transform>())
+            Transform[] childs = objectPath.GetComponentsInChildren<Transform>();
+            foreach(Transform child in childs)
             {
                 if(child == transform) continue;
                 child.gameObject.tag = "Obstacle";
             }
+            foreach(Transform childsObjt in childs)
+            {
+                if(childsObjt == transform) continue;
 
-            // isClick = true;
-            // isDone = true;
+                MeshRenderer mr = childsObjt.GetComponentInChildren<MeshRenderer>();
+                if(mr != null)
+                {
+                    Material mats = mr.material;
+                    mats.SetFloat("_OutlineSize", 0f);
+                }
+            }
             GridManager.Instance.SetObstacles();
             OnPlayerSearch?.Invoke();
             
@@ -64,18 +73,7 @@ public class PathPlacement : MonoBehaviour
             canPlace = true;
             Plane plane = new Plane(Vector3.up, Vector3.zero);
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            //RaycastHit hit;
             float distance;
-
-            // if (Physics.Raycast(ray, out hit))
-            // {
-            //     Vector3 pos = hit.point;
-
-            //     int x = Mathf.FloorToInt(pos.x);
-            //     int z = Mathf.FloorToInt(pos.z);
-
-            //     transform.position = new Vector3(x + 0.5f, 2.5f, z + 0.5f);
-            // }
 
             if(plane.Raycast(ray, out distance))
             {
@@ -94,10 +92,7 @@ public class PathPlacement : MonoBehaviour
                 if(childs == transform) continue;
                 Vector3 worldPos = childs.position;
                 Vector3Int gridPos = GridManager.Instance.WorldToGrid(worldPos);
-                //Debug.Log("Child world: " + worldPos + " Grid: " + gridPos);
-
-                //Vector3Int above = new Vector3Int(gridPos.x, gridPos.y + 1, gridPos.z);
-                
+              
                 if(GridManager.Instance.grid.ContainsKey(gridPos))
                 {
                     if(GridManager.Instance.grid[gridPos] == GridManager.GridType.Obstacle)

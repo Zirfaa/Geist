@@ -4,10 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    // Buat helper private agar tidak perlu tulis ulang di setiap method
     private void LoadScene(string sceneName)
     {
-        Time.timeScale = 1f; // Reset timescale sebelum pindah scene
+        GameManager.instance.timer = 0f;
+        Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
     }
 
@@ -25,7 +25,6 @@ public class SceneLoader : MonoBehaviour
 
     public void GoToSelectLevel()
     {
-        //GameManager.instance.timer = 0f;
         Debug.Log("Tombol Play ditekan");
         LoadScene("SelectLevel");
     }
