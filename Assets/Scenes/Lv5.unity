@@ -10381,6 +10381,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 466387974}
     m_Modifications:
+    - target: {fileID: 3147062739355217386, guid: 33346baa7f9da4542a81862e33180b85, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 563233960}
+    - target: {fileID: 3147062739355217386, guid: 33346baa7f9da4542a81862e33180b85, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClosePausePanel
+      objectReference: {fileID: 0}
     - target: {fileID: 3379986002512620366, guid: 33346baa7f9da4542a81862e33180b85, type: 3}
       propertyPath: m_Name
       value: Paused
