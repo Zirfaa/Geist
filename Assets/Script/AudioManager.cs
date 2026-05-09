@@ -16,6 +16,10 @@ public class AudioManager : MonoBehaviour
             audioManager = this;
             DontDestroyOnLoad(gameObject);
         }
+        else
+        {
+            Destroy(gameObject);
+        }
         LoadAudio();
         PlayBGM();
     }
