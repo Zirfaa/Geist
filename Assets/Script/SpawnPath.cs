@@ -26,11 +26,12 @@ public class SpawnPath : MonoBehaviour, IPointerClickHandler
 
             Vector3 spawnPos = new Vector3(x + 0.5f, 2.5f, z + 0.5f);
             
+            bool pathCraft = OnPathManage?.Invoke(pathsValue) ?? false;
+            if(!pathCraft) return; 
+            
             destroyPath.currentPath = Instantiate(PathObject, spawnPos, Quaternion.identity);
             OnDestroyPanelShow?.Invoke(true);
             PathManager.pathManager.canSpawnPath = false;
-            bool pathCraft = OnPathManage?.Invoke(pathsValue) ?? false;
-            if(!pathCraft) return; 
         }
     }
 
