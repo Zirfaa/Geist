@@ -4,6 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    public static SceneLoader instance;
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
     private void LoadScene(string sceneName)
     {
         GameManager.instance.timer = 0f;
@@ -20,6 +28,11 @@ public class SceneLoader : MonoBehaviour
     {
         GameManager.instance.timer = 0f;
         Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ReloadPathScene()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

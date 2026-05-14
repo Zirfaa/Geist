@@ -48,6 +48,10 @@ public class UIInGame : MonoBehaviour
         }
         PathUnits.text = "Path Units : " + pathsValue;
         TimerLeft.text = timerChange.ToString();
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            SceneLoader.instance.ReloadPathScene();
+        }
     }
 
     void OnEnable()
