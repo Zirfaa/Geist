@@ -31,9 +31,16 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void ReloadPathScene()
+    public void ReloadPath()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameObject[] paths = GameObject.FindGameObjectsWithTag("Path");
+        if(paths == null) return;
+        foreach(GameObject path in paths)
+        {
+            PathManager.pathManager.pathsUnit = PathManager.pathManager.maxPaths;
+            Destroy(path);
+        }
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void GoToSelectLevel()

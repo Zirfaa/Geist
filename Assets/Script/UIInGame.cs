@@ -50,7 +50,7 @@ public class UIInGame : MonoBehaviour
         TimerLeft.text = timerChange.ToString();
         if(Input.GetKeyDown(KeyCode.R))
         {
-            SceneLoader.instance.ReloadPathScene();
+            SceneLoader.instance.ReloadPath();
         }
     }
 
