@@ -3432,7 +3432,7 @@ GameObject:
   - component: {fileID: 839648863}
   - component: {fileID: 839648862}
   m_Layer: 0
-  m_Name: Fx_FirelyFire_03 (1)
+  m_Name: ParticleButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3534,8 +3534,8 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 1
-  playOnAwake: 1
+  prewarm: 0
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -11121,6 +11121,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0.5, z: 0}
   endPos: {x: 0, y: 0, z: 0}
   isPressed: 0
+  ParticleButton: {fileID: 839648863}
+  ParticleGrave: {fileID: 1893948560}
 --- !u!64 &1488986952
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12645,7 +12647,7 @@ GameObject:
   - component: {fileID: 1893948560}
   - component: {fileID: 1893948559}
   m_Layer: 0
-  m_Name: Fx_FirelyFire_03
+  m_Name: ParticleGrave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12747,8 +12749,8 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 1
-  playOnAwake: 1
+  prewarm: 0
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:

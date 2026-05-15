@@ -9,10 +9,13 @@ public class ButtonPressed : MonoBehaviour
     private float duration = 2f;
     public bool isPressed = false;
     public static event Action OnPlayerSearch;
+    public ParticleSystem ParticleButton;
+    public ParticleSystem ParticleGrave;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        ParticleButton.Play();
+        ParticleGrave.Stop();
     }
 
     // Update is called once per frame
@@ -34,6 +37,8 @@ public class ButtonPressed : MonoBehaviour
             isPressed = true;
             PathFinding pathFinding = other.GetComponent<PathFinding>();
             pathFinding.targetType = PathFinding.TargetType.Grave;
+            ParticleButton.Stop();
+            ParticleGrave.Play();
             OnPlayerSearch?.Invoke();
         }
     }
