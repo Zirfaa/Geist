@@ -20,6 +20,7 @@ public class UIInGame : MonoBehaviour
     public Slider SFXVolSlider;
     public GameObject PausePanel;
     public GameObject Setting;
+    public Slider TimerSlider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -48,6 +49,7 @@ public class UIInGame : MonoBehaviour
         }
         PathUnits.text = "Path Units : " + pathsValue;
         TimerLeft.text = timerChange.ToString();
+        TimerSlider.value = timerChange;
         if(Input.GetKeyDown(KeyCode.R))
         {
             SceneLoader.instance.ReloadPath();
