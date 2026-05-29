@@ -17,10 +17,12 @@ public class Priest : MonoBehaviour
     };
     private float speed = 5f;
     public static event Action OnGameOver;
+    private Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         pathFinding = Player.GetComponent<PathFinding>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -53,6 +55,7 @@ public class Priest : MonoBehaviour
 
     IEnumerator PathSearch()
     {
+        animator.SetBool("IsWalk", true);
         Vector3Int start = GridManager.Instance.WorldToGrid(transform.position);
         Vector3Int targetPos = GridManager.Instance.WorldToGrid(Player.position);
 
@@ -107,6 +110,7 @@ public class Priest : MonoBehaviour
                 yield return null;
             }
         }
+        animator.SetBool("IsWalk", false);
         OnGameOver?.Invoke();
     }
 }
