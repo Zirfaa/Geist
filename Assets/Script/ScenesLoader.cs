@@ -52,12 +52,13 @@ public class SceneLoader : MonoBehaviour
     public void GoToNewGame()
     {
         SaveManager.saveManager.RemoveData();
+        PlayerPrefs.DeleteKey("Tutorial");
         LoadScene("SelectLevel");
     }
 
     public void GoToLvl1()
     {
-        if(PlayerPrefs.GetInt("Tutorial") == 0)
+        if(PlayerPrefs.GetInt("Tutorial", 0) == 0)
         {
             LoadScene("TutorialLevel");
         }else

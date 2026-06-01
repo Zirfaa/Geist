@@ -64,6 +64,8 @@ public class UITutorialGame : MonoBehaviour
     public void TutorialDone()
     {
         GameManager.instance.timer = 0;
+        PlayerPrefs.SetInt("Tutorial", 1);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("Lv1");
     }
 

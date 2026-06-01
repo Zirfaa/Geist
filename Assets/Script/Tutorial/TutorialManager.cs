@@ -51,7 +51,7 @@ public class TutorialManager : MonoBehaviour
                 UITutorialGame.uITutorialGame.HoleHighlight.SetBool("HolePathSpawn", true);
                 break;
             case 4:
-                StartCoroutine(CDPathDestroy(3));
+                StartCoroutine(CDPathDestroy());
                 break;
             case 5:
                 canPressStep = true;
@@ -80,19 +80,19 @@ public class TutorialManager : MonoBehaviour
         UITutorialGame.uITutorialGame.ExplenationText.gameObject.SetActive(true);
         UITutorialGame.uITutorialGame.ExplenationText.text = UITutorialGame.uITutorialGame.texts[0];
         yield return new WaitForSeconds(duration);
-        UITutorialGame.uITutorialGame.HoleHighlight.SetBool("HolePathUnits", false);
         UITutorialGame.uITutorialGame.ExplenationText.text = UITutorialGame.uITutorialGame.texts[1];
         yield return new WaitForSeconds(2);
+        UITutorialGame.uITutorialGame.HoleHighlight.SetBool("HolePathUnits", false);
         UITutorialGame.uITutorialGame.ExplenationText.gameObject.SetActive(false);
         //tambahkan text ui bahwa bisa rotate juga
     }
 
-    IEnumerator CDPathDestroy(float duration)
+    IEnumerator CDPathDestroy()
     {
         UITutorialGame.uITutorialGame.FingerCursorObjt.SetActive(false);
         UITutorialGame.uITutorialGame.FingerCursor.SetBool("FingerPathSpawn", false);
         UITutorialGame.uITutorialGame.HoleHighlight.SetBool("HolePathSpawn", false);
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(1);
         UITutorialGame.uITutorialGame.FingerCursorObjt.SetActive(true);
         UITutorialGame.uITutorialGame.FingerCursor.SetBool("FingerPathDestroy", true);
         UITutorialGame.uITutorialGame.HoleHighlight.SetBool("HolePathDestroy", true);
@@ -112,6 +112,8 @@ public class TutorialManager : MonoBehaviour
         UITutorialGame.uITutorialGame.ExplenationText.gameObject.SetActive(true);
         UITutorialGame.uITutorialGame.ExplenationText.text = UITutorialGame.uITutorialGame.texts[3];
         yield return new WaitForSeconds(2);
+        UITutorialGame.uITutorialGame.ExplenationText.text = UITutorialGame.uITutorialGame.texts[6];
+        yield return new WaitForSeconds(3);
         UITutorialGame.uITutorialGame.ExplenationText.gameObject.SetActive(false);
     }
 
@@ -125,6 +127,8 @@ public class TutorialManager : MonoBehaviour
         yield return new WaitForSeconds(2);
         UITutorialGame.uITutorialGame.ExplenationText.text = UITutorialGame.uITutorialGame.texts[5];
         yield return new WaitForSeconds(2);
+        UITutorialGame.uITutorialGame.ExplenationText.text = UITutorialGame.uITutorialGame.texts[6];
+        yield return new WaitForSeconds(3);
         UITutorialGame.uITutorialGame.ExplenationText.gameObject.SetActive(false);
     }
 
