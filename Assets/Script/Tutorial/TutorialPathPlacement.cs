@@ -1,10 +1,7 @@
 using System;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class PathPlacement : MonoBehaviour
+public class TutorialPathPlacement : MonoBehaviour
 {
     [HideInInspector] public GameObject objectPath;
     // private bool isClick = false;
@@ -26,7 +23,7 @@ public class PathPlacement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && !isPlace && !PathManager.pathManager.canSpawnPath)
+        if(Input.GetMouseButtonDown(0) && !isPlace && !TutorialPathManager.TPM.canSpawnPath && TutorialManager.TM.currentStep == 2)
         {
             //Debug.Log("Placement");
             if(!canPlace)
@@ -38,7 +35,7 @@ public class PathPlacement : MonoBehaviour
             OnDestroyPanelHide?.Invoke(false);
             isPlace = true;
             AudioManager.audioManager.PlaySFX(PlacementPathSound);
-            PathManager.pathManager.canSpawnPath = true;
+            TutorialPathManager.TPM.canSpawnPath = true;
             Transform[] childs = objectPath.GetComponentsInChildren<Transform>();
             foreach(Transform child in childs)
             {
@@ -58,7 +55,7 @@ public class PathPlacement : MonoBehaviour
             }
             GridManager.Instance.SetObstacles();
             OnPlayerSearch?.Invoke();
-            
+            TutorialManager.TM.NextStep();
         }
 
         if(!isPlace && Input.GetMouseButtonDown(1))

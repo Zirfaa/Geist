@@ -1,7 +1,11 @@
 fileFormatVersion: 2
-guid: 99c9720ab356a0642a771bea13969a05
-DefaultImporter:
+guid: eca73b8fdc443fb48ab07c09b086bd75
+MonoImporter:
   externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
@@ -10,5 +14,5 @@ AssetOrigin:
   productId: 123705
   packageName: Minimalist Cartoon UI Pack
   packageVersion: 1.2
-  assetPath: Assets/Low Poly Graveyard/Scenes/SampleScene.unity
+  assetPath: Assets/Thoth/Cartoon UI Pack/Scripts/StatsExample.cs
   uploadId: 455713

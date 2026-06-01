@@ -43,6 +43,7 @@ public class PathFinding : MonoBehaviour
     void OnEnable()
     {
         PathPlacement.OnPlayerSearch += CallPathSearch;
+        TutorialPathPlacement.OnPlayerSearch += CallPathSearch;
         ButtonPressed.OnPlayerSearch += CallPathSearch;
         //DoorGate.OnPlayerSearch += CallPathSearch;
     }
@@ -50,6 +51,7 @@ public class PathFinding : MonoBehaviour
     void OnDisable()
     {
         PathPlacement.OnPlayerSearch -= CallPathSearch;
+        TutorialPathPlacement.OnPlayerSearch -= CallPathSearch;
         ButtonPressed.OnPlayerSearch -= CallPathSearch;
         //DoorGate.OnPlayerSearch -= CallPathSearch;
     }

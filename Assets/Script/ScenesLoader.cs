@@ -55,7 +55,17 @@ public class SceneLoader : MonoBehaviour
         LoadScene("SelectLevel");
     }
 
-    public void GoToLvl1() => LoadScene("Lv1");
+    public void GoToLvl1()
+    {
+        if(PlayerPrefs.GetInt("Tutorial") == 0)
+        {
+            LoadScene("TutorialLevel");
+        }else
+        {
+            LoadScene("Lv1");
+        }
+    }
+    
     public void GoToLvl2() => LoadScene("Lv2");
     public void GoToLvl3() => LoadScene("Lv3");
     public void GoToLvl4() => LoadScene("Lv4");
