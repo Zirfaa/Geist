@@ -24683,7 +24683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9039358a1f190418278d19c3f40789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PathManager
-  maxPaths: 7
+  maxPaths: 10
   pathsUnit: 5
   canSpawnPath: 1
 --- !u!4 &1472554997
