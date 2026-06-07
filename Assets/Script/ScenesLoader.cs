@@ -71,4 +71,9 @@ public class SceneLoader : MonoBehaviour
     public void GoToLvl3() => LoadScene("Lv3");
     public void GoToLvl4() => LoadScene("Lv4");
     public void GoToLvl5() => LoadScene("Lv5");
+    public void GoToLvl6() => LoadScene("Lv6");
+    public void GoToLvl7() => LoadScene("Lv7");
+    public void GoToLvl8() => LoadScene("Lv8");
+    public void GoToLvl9() => LoadScene("Lv9");
+    public void GoToLvl10() => LoadScene("Lv10");
 }
