@@ -8,6 +8,7 @@ public class TutorialPathDestroy : MonoBehaviour, IPointerEnterHandler
     {
         if(currentPath != null && TutorialManager.TM.currentStep == 4)
         {
+            UITutorialGame.uITutorialGame.ExplenationText.gameObject.SetActive(false);
             TutorialManager.TM.NextStep();
             Debug.Log("Destroyeedd");
             TutorialPathPlacement pathPlacement = currentPath.GetComponent<TutorialPathPlacement>();

@@ -26,6 +26,7 @@ public class TutorialManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Return) && canPressStep)
         {
+            UITutorialGame.uITutorialGame.ExplenationText.gameObject.SetActive(false);
             NextStep();
         }
     }
@@ -99,7 +100,7 @@ public class TutorialManager : MonoBehaviour
         UITutorialGame.uITutorialGame.ExplenationText.gameObject.SetActive(true);
         UITutorialGame.uITutorialGame.ExplenationText.text = UITutorialGame.uITutorialGame.texts[2];
         yield return new WaitForSeconds(2);
-        UITutorialGame.uITutorialGame.ExplenationText.gameObject.SetActive(false);
+        UITutorialGame.uITutorialGame.ExplenationText.text = UITutorialGame.uITutorialGame.texts[3];
     }
 
     IEnumerator CDPathReturn(float duration)
@@ -110,11 +111,7 @@ public class TutorialManager : MonoBehaviour
         yield return new WaitForSeconds(duration);
         UITutorialGame.uITutorialGame.HoleHighlight.SetBool("HolePathReturn", true);
         UITutorialGame.uITutorialGame.ExplenationText.gameObject.SetActive(true);
-        UITutorialGame.uITutorialGame.ExplenationText.text = UITutorialGame.uITutorialGame.texts[3];
-        yield return new WaitForSeconds(2);
-        UITutorialGame.uITutorialGame.ExplenationText.text = UITutorialGame.uITutorialGame.texts[6];
-        yield return new WaitForSeconds(3);
-        UITutorialGame.uITutorialGame.ExplenationText.gameObject.SetActive(false);
+        UITutorialGame.uITutorialGame.ExplenationText.text = UITutorialGame.uITutorialGame.texts[4];
     }
 
     IEnumerator CDTimer(float duration)
@@ -123,13 +120,9 @@ public class TutorialManager : MonoBehaviour
         yield return new WaitForSeconds(duration);
         UITutorialGame.uITutorialGame.HoleHighlight.SetBool("HoleTimer", true);
         UITutorialGame.uITutorialGame.ExplenationText.gameObject.SetActive(true);
-        UITutorialGame.uITutorialGame.ExplenationText.text = UITutorialGame.uITutorialGame.texts[4];
-        yield return new WaitForSeconds(2);
         UITutorialGame.uITutorialGame.ExplenationText.text = UITutorialGame.uITutorialGame.texts[5];
         yield return new WaitForSeconds(2);
         UITutorialGame.uITutorialGame.ExplenationText.text = UITutorialGame.uITutorialGame.texts[6];
-        yield return new WaitForSeconds(3);
-        UITutorialGame.uITutorialGame.ExplenationText.gameObject.SetActive(false);
     }
 
     IEnumerator CDDoneTutorial(float duration)

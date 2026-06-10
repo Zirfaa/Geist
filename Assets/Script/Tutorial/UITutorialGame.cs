@@ -17,6 +17,7 @@ public class UITutorialGame : MonoBehaviour
         "If you spawn path, path units will decrased by path value",
         "You can rotate the path with the right click",
         "If you destroy the path, path units will increased by value",
+        "Move your cursor to UI in right side",
         "If you want to back just press R",
         "You have a time to think and find a solution",
         "Enjoy the game"
