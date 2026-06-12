@@ -743,6 +743,7 @@ GameObject:
   - component: {fileID: 156669172}
   - component: {fileID: 156669171}
   - component: {fileID: 156669170}
+  - component: {fileID: 156669174}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -845,6 +846,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &156669174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156669169}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232cbd3440257714d9952ad62412f77c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  currentDirection: 0
+  currentStep: 1
+  maxStep: 0
 --- !u!1 &162600195
 GameObject:
   m_ObjectHideFlags: 0
@@ -9749,6 +9765,7 @@ GameObject:
   - component: {fileID: 643673366}
   - component: {fileID: 643673365}
   - component: {fileID: 643673364}
+  - component: {fileID: 643673368}
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Untagged
@@ -9851,6 +9868,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &643673368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643673363}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232cbd3440257714d9952ad62412f77c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  currentDirection: 0
+  currentStep: 1
+  maxStep: 0
 --- !u!1 &648171730
 GameObject:
   m_ObjectHideFlags: 0
