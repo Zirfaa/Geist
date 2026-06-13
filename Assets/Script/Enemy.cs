@@ -4,13 +4,11 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField]private int currentDirection = 0;
-    [SerializeField]private int currentStep = 1;
-    public int maxStep;
-    Vector3Int[] directions = new Vector3Int[]
+    public Vector3Int[] directions = new Vector3Int[]
     {
-        new Vector3Int(0, 0, 1),
+        new Vector3Int(0, 0, 2),
         new Vector3Int(1, 0, 0),
-        new Vector3Int(0, 0, -1),
+        new Vector3Int(0, 0, -2),
         new Vector3Int(-1, 0, 0),
     };
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,16 +25,6 @@ public class Enemy : MonoBehaviour
 
     IEnumerator MoveNextTile()
     {
-        currentStep++;
-        if(currentStep >= maxStep)
-        {
-            currentStep = 1;
-            currentDirection++;
-            if(currentDirection >= directions.Length)
-            {
-                currentDirection = 0;
-            }
-        }
         Vector3Int gridPos = GridManager.Instance.WorldToGrid(transform.position);
         Vector3Int nextGrid = gridPos + directions[currentDirection];
         Vector3 targetPos = GridManager.Instance.GridToWorld(nextGrid);
@@ -46,6 +34,13 @@ public class Enemy : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, targetPos, 5 * Time.deltaTime);
             yield return null;
         }
+        
+        currentDirection++;
+        if(currentDirection >= directions.Length)
+        {
+            currentDirection = 0;
+        }
+
 
     }
 

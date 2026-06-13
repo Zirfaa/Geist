@@ -27367,7 +27367,7 @@ MonoBehaviour:
   startPos: {x: 12, y: 2.5, z: -9}
   endPos: {x: 12, y: 0.5, z: -9}
   isGateOpen: 0
-  GateOpen: {fileID: 0}
+  GateOpen: {fileID: 8300000, guid: 41d4ebe8fc3ead74a93e3589f3a85a0c, type: 3}
 --- !u!64 &1664317655
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30160,12 +30160,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009699007}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 232cbd3440257714d9952ad62412f77c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  maxStep: 0
+  currentDirection: 0
+  directions:
+  - {x: 0, y: 0, z: 0}
 --- !u!1 &2026888109
 GameObject:
   m_ObjectHideFlags: 0

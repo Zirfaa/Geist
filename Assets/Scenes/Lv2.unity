@@ -446,8 +446,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorGate
   buttonPressed: {fileID: 0}
   doorType: 1
-  startPos: {x: 10, y: 2.5, z: 3.5}
-  endPos: {x: 10, y: 0.5, z: 3.5}
+  startPos: {x: 10.5, y: 2.5, z: 3.5}
+  endPos: {x: 10.5, y: 0.5, z: 3.5}
   isGateOpen: 0
   GateOpen: {fileID: 8300000, guid: 41d4ebe8fc3ead74a93e3589f3a85a0c, type: 3}
 --- !u!64 &68890320

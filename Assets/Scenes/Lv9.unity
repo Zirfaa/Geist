@@ -1462,7 +1462,7 @@ Transform:
   m_GameObject: {fileID: 185143630}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.5, y: 3, z: -5.5}
+  m_LocalPosition: {x: 13.5, y: 3, z: -4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1481,8 +1481,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   currentDirection: 0
-  currentStep: 1
-  maxStep: 3
+  directions:
+  - {x: 2, y: 0, z: 0}
+  - {x: -2, y: 0, z: 0}
 --- !u!1 &185818175
 GameObject:
   m_ObjectHideFlags: 0
@@ -19359,10 +19360,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorGate
   buttonPressed: {fileID: 700373110}
   doorType: 0
-  startPos: {x: 12, y: 2.5, z: -9}
-  endPos: {x: 12, y: 0.5, z: -9}
+  startPos: {x: 2.5, y: 2.5, z: 4.5}
+  endPos: {x: 2.5, y: 0.5, z: 4.5}
   isGateOpen: 0
-  GateOpen: {fileID: 0}
+  GateOpen: {fileID: 8300000, guid: 41d4ebe8fc3ead74a93e3589f3a85a0c, type: 3}
 --- !u!64 &1323085615
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26945,7 +26946,7 @@ Transform:
   m_GameObject: {fileID: 1683901322}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 3, z: 0.5}
+  m_LocalPosition: {x: 0.5, y: 3, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26964,8 +26965,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   currentDirection: 0
-  currentStep: 1
-  maxStep: 2
+  directions:
+  - {x: 0, y: 0, z: 2}
+  - {x: 2, y: 0, z: 0}
+  - {x: 0, y: 0, z: -2}
+  - {x: -2, y: 0, z: 0}
 --- !u!1 &1685891228
 GameObject:
   m_ObjectHideFlags: 0
@@ -30095,8 +30099,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorGate
   buttonPressed: {fileID: 0}
   doorType: 1
-  startPos: {x: 11, y: 2.5, z: 3.5}
-  endPos: {x: 11, y: 0.5, z: 3.5}
+  startPos: {x: 5, y: 2.5, z: -7.5}
+  endPos: {x: 5, y: 0.5, z: -7.5}
   isGateOpen: 0
   GateOpen: {fileID: 8300000, guid: 41d4ebe8fc3ead74a93e3589f3a85a0c, type: 3}
 --- !u!64 &2128348345
@@ -30187,7 +30191,7 @@ Transform:
   m_GameObject: {fileID: 2128348343}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.999999, y: 2.5, z: -7.4999986}
+  m_LocalPosition: {x: 5, y: 2.5, z: -7.5}
   m_LocalScale: {x: 1, y: 1.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

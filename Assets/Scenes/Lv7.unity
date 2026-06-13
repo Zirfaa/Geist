@@ -16106,10 +16106,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorGate
   buttonPressed: {fileID: 745253333}
   doorType: 0
-  startPos: {x: 12, y: 2.5, z: -9}
-  endPos: {x: 12, y: 0.5, z: -9}
+  startPos: {x: 2, y: 2.5, z: -7.5}
+  endPos: {x: 2, y: 0.5, z: -7.5}
   isGateOpen: 0
-  GateOpen: {fileID: 0}
+  GateOpen: {fileID: 8300000, guid: 41d4ebe8fc3ead74a93e3589f3a85a0c, type: 3}
 --- !u!64 &1415798700
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16861,8 +16861,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorGate
   buttonPressed: {fileID: 0}
   doorType: 1
-  startPos: {x: 11, y: 2.5, z: 3.5}
-  endPos: {x: 11, y: 0.5, z: 3.5}
+  startPos: {x: 13, y: 2.5, z: 2.5}
+  endPos: {x: 13, y: 0.5, z: 2.5}
   isGateOpen: 0
   GateOpen: {fileID: 8300000, guid: 41d4ebe8fc3ead74a93e3589f3a85a0c, type: 3}
 --- !u!64 &1554069777
@@ -17377,8 +17377,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   currentDirection: 0
-  currentStep: 0
-  maxStep: 3
+  directions:
+  - {x: 0, y: 0, z: 2}
+  - {x: 2, y: 0, z: 0}
+  - {x: 0, y: 0, z: -2}
+  - {x: -2, y: 0, z: 0}
 --- !u!1 &1665998244
 GameObject:
   m_ObjectHideFlags: 0
