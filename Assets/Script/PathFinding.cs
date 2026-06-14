@@ -19,6 +19,7 @@ public class PathFinding : MonoBehaviour
     public Coroutine PathCoroutine;
     public bool getTarget = false;
     public static event Action OnWinGame;
+    public static event Action GameOver;
     private Animator animator;
     //private Queue<Vector3Int> pathFind = new Queue<Vector3Int>();
     //private List<Vector3Int> path = new List<Vector3Int>();
@@ -148,5 +149,13 @@ public class PathFinding : MonoBehaviour
         OnWinGame?.Invoke();
     }
 
-    
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Priest" || other.gameObject.tag == "EnemyGhost")
+        {
+            GameOver?.Invoke();
+        }
+    }
+
+
 }

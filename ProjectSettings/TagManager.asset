@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - Path
+  - EnemyGhost
   layers:
   - Default
   - TransparentFX

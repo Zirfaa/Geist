@@ -58,7 +58,7 @@ public class UIInGame : MonoBehaviour
 
     void OnEnable()
     {
-        Priest.OnGameOver += GameOver;
+        PathFinding.GameOver += GameOver;
         PathFinding.OnWinGame += WinGame;
         SpawnPath.OnDestroyPanelShow += RemovePathPanel;
         PathPlacement.OnDestroyPanelHide += RemovePathPanel;
@@ -66,7 +66,7 @@ public class UIInGame : MonoBehaviour
 
     void OnDisable()
     {
-        Priest.OnGameOver -= GameOver;
+        PathFinding.GameOver -= GameOver;
         PathFinding.OnWinGame -= WinGame;
         SpawnPath.OnDestroyPanelShow -= RemovePathPanel;
         PathPlacement.OnDestroyPanelHide -= RemovePathPanel;

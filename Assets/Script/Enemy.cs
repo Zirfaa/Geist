@@ -31,6 +31,11 @@ public class Enemy : MonoBehaviour
 
         while(Vector3.Distance(transform.position, targetPos) > 0.001f)
         {
+            Vector3 diretion = targetPos - transform.position;
+            if(diretion != Vector3.zero)
+            {
+                transform.rotation = Quaternion.LookRotation(diretion);
+            }
             transform.position = Vector3.MoveTowards(transform.position, targetPos, 5 * Time.deltaTime);
             yield return null;
         }

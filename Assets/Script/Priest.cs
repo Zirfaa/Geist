@@ -16,7 +16,6 @@ public class Priest : MonoBehaviour
         new Vector3Int(0, 0, -1)
     };
     private float speed = 5f;
-    public static event Action OnGameOver;
     private Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -111,6 +110,5 @@ public class Priest : MonoBehaviour
             }
         }
         animator.SetBool("IsWalk", false);
-        OnGameOver?.Invoke();
     }
 }
