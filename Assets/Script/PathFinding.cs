@@ -30,7 +30,8 @@ public class PathFinding : MonoBehaviour
         new Vector3Int(0, 0, 1),
         new Vector3Int(0, 0, -1)
     };
-
+    public enum PlayerState {FindPath, None};
+    public static PlayerState playerState = PlayerState.None;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -117,6 +118,7 @@ public class PathFinding : MonoBehaviour
         }else
         {
             getTarget = true;
+            playerState = PlayerState.FindPath;
         }
 
         List<Vector3Int> paths = new List<Vector3Int>();

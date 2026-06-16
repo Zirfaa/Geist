@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -40,7 +41,12 @@ public class SceneLoader : MonoBehaviour
             PathManager.pathManager.pathsUnit = PathManager.pathManager.maxPaths;
             Destroy(path);
         }
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StartCoroutine(CDSetObtacle(0.1f));
+    }
+    IEnumerator CDSetObtacle(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        GridManager.Instance.SetObstacles();
     }
 
     public void GoToSelectLevel()

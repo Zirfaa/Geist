@@ -50,7 +50,7 @@ public class UIInGame : MonoBehaviour
         PathUnits.text = "Path Units : " + pathsValue;
         TimerLeft.text = timerChange.ToString();
         TimerSlider.value = timerChange;
-        if(Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKeyDown(KeyCode.R) && PathFinding.playerState == PathFinding.PlayerState.None)
         {
             SceneLoader.instance.ReloadPath();
         }
