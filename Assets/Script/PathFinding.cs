@@ -155,6 +155,7 @@ public class PathFinding : MonoBehaviour
     {
         if(other.gameObject.tag == "Priest" || other.gameObject.tag == "EnemyGhost")
         {
+            Debug.Log("Game Over");
             GameOver?.Invoke();
         }
     }
