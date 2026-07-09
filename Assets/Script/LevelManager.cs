@@ -14,11 +14,11 @@ public class LevelManager : MonoBehaviour
             if(data != null)
             {
                 //int remainPath = data.maxPaths - data.PathsRemain; 
-                if(data.PathsRemain > 2)
+                if(data.PathsRemain <= 1)
                 {
                     levels[i].Stars[0].SetActive(true);
-                    levels[i].Stars[1].SetActive(true);
-                    levels[i].Stars[2].SetActive(true);
+                    levels[i].Stars[1].SetActive(false);
+                    levels[i].Stars[2].SetActive(false);
                     levels[i].Lock.SetActive(false);
                 }else if(data.PathsRemain <= 2)
                 {
@@ -26,11 +26,11 @@ public class LevelManager : MonoBehaviour
                     levels[i].Stars[1].SetActive(true);
                     levels[i].Stars[2].SetActive(false);
                     levels[i].Lock.SetActive(false);
-                }else if(data.PathsRemain <= 1)
+                }else if(data.PathsRemain > 2)
                 {
                     levels[i].Stars[0].SetActive(true);
-                    levels[i].Stars[1].SetActive(false);
-                    levels[i].Stars[2].SetActive(false);
+                    levels[i].Stars[1].SetActive(true);
+                    levels[i].Stars[2].SetActive(true);
                     levels[i].Lock.SetActive(false);
                 }
             }else

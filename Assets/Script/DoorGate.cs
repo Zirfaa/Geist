@@ -25,7 +25,7 @@ public class DoorGate : MonoBehaviour
     {
         if(buttonPressed != null && doorType == DoorType.Button)
         {
-            if(buttonPressed.isPressed)
+            if(buttonPressed.isPressed && !isGateOpen)
             {
                 isGateOpen = true;
                 StartCoroutine(cdGate());
