@@ -32490,7 +32490,6 @@ GameObject:
   - component: {fileID: 5384900241208149817}
   - component: {fileID: 5588993486098342383}
   - component: {fileID: 6186409709716848466}
-  - component: {fileID: 8885316074793700732}
   m_Layer: 0
   m_Name: EnemyGhost
   m_TagString: EnemyGhost
@@ -32498,21 +32497,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8885316074793700732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8885316074793700731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 232cbd3440257714d9952ad62412f77c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  currentDirection: 0
-  directions:
-  - {x: 0, y: 0, z: 0}
 --- !u!4 &9024345847948504252
 Transform:
   m_ObjectHideFlags: 0
